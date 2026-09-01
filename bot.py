@@ -4,6 +4,8 @@ import time
 
 
 import os
+from flask import Flask
+import threading
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 EXTERNAL_API_URL = "https://rtf-api-server.onrender.com/api?types=num&key=demo2&spell=8815695989"
 
@@ -181,5 +183,17 @@ def main():
                 )
 
 
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Bot is running"
+
+def run_web():
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host='0.0.0.0', port=port)
+
 if __name__ == "__main__":
+    threading.Thread(target=run_web).start()
     main()
+    
