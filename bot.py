@@ -4,7 +4,7 @@ import time
 
 
 import os
-BOT_TOKEN = os.environ.get("8576641069:AAHqJO9dpSK-xA1ohHWrwtd0-g4F8TuiJMo", "")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 EXTERNAL_API_URL = "https://rtf-api-server.onrender.com/api?types=num&key=demo2&spell=8815695989"
 
 BASE_URL = "https://api.telegram.org/bot" + BOT_TOKEN
