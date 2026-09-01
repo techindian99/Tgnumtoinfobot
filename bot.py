@@ -79,7 +79,7 @@ def phone_lookup(phone_number):
 
 def main():
     if not BOT_TOKEN:
-    print("ERROR: Please add your Telegram BOT_TOKEN.")
+        print("ERROR: Please add your Telegram BOT_TOKEN.")
         return
 
     keyboard = {
