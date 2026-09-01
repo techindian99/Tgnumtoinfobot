@@ -3,7 +3,8 @@ import json
 import time
 
 
-BOT_TOKEN = "8576641069:AAHqJO9dpSK-xA1ohHWrwtd0-g4F8TuiJMo"
+import os
+BOT_TOKEN = os.environ.get("8576641069:AAHqJO9dpSK-xA1ohHWrwtd0-g4F8TuiJMo", "")
 EXTERNAL_API_URL = "https://rtf-api-server.onrender.com/api?types=num&key=demo2&spell=8815695989"
 
 BASE_URL = "https://api.telegram.org/bot" + BOT_TOKEN
@@ -77,8 +78,8 @@ def phone_lookup(phone_number):
 
 
 def main():
-    if BOT_TOKEN == "8576641069:AAHqJO9dpSK-xA1ohHWrwtd0-g4F8TuiJMo":
-        print("ERROR: Please add your Telegram BOT_TOKEN.")
+    if not BOT_TOKEN:
+    print("ERROR: Please add your Telegram BOT_TOKEN.")
         return
 
     keyboard = {
